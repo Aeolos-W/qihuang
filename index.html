@@ -10,31 +10,48 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
             line-height: 1.6;
             color: #2c3e2f;
-            background: #fefaf5;
+            /* 背景设计：柔和宣纸纹理 + 微妙的渐变叠加 */
+            background-color: #fef7ed;
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(230, 180, 34, 0.02) 0px, rgba(230, 180, 34, 0.02) 2px, transparent 2px, transparent 8px),
+                radial-gradient(circle at 20% 30%, rgba(220, 200, 160, 0.08) 0%, rgba(245, 235, 215, 0) 60%);
+            min-height: 100vh;
         }
+
+        .main-wrapper {
+            background: rgba(254, 250, 245, 0.85);
+            backdrop-filter: blur(0px);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+
         header {
             background: #2c5e2e;
             color: white;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
+
         header h1 {
             font-size: 2rem;
             margin-bottom: 8px;
         }
+
         header p {
             font-size: 1rem;
             opacity: 0.9;
         }
+
         nav {
             background: #3b7840;
             padding: 10px 0;
@@ -42,39 +59,50 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: 500;
             transition: opacity 0.2s;
+            cursor: pointer;
         }
+
         nav a:hover {
             text-decoration: underline;
             opacity: 0.9;
         }
+
         .hero {
-            background: #e9f3e6;
+            background: rgba(233, 243, 230, 0.7);
             padding: 60px 0;
             text-align: center;
             margin-bottom: 40px;
+            border-radius: 0 0 40px 40px;
+            backdrop-filter: blur(2px);
         }
+
         .hero h2 {
             font-size: 2rem;
             margin-bottom: 15px;
             color: #1f4f21;
         }
+
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
             color: #3a5e3c;
         }
+
         .section {
             margin: 60px 0;
             scroll-margin-top: 80px;
         }
+
         .section h3 {
             font-size: 1.8rem;
             color: #2c5e2e;
@@ -82,25 +110,32 @@
             padding-left: 20px;
             margin-bottom: 30px;
         }
+
         .card-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 28px;
             justify-content: flex-start;
         }
+
         .card {
             flex: 1 1 280px;
-            background: white;
-            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 28px;
             padding: 24px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #e9e2d8;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            transition: all 0.25s ease;
+            border: 1px solid #e9decb;
+            cursor: pointer;
         }
+
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12);
+            background: white;
+            border-color: #d4c2a4;
         }
+
         .card h4 {
             font-size: 1.4rem;
             color: #2c5e2e;
@@ -109,10 +144,12 @@
             display: inline-block;
             padding-bottom: 4px;
         }
+
         .card p {
             margin: 12px 0;
             color: #3a4a3c;
         }
+
         .card .en {
             color: #7e8a7c;
             font-size: 0.85rem;
@@ -121,31 +158,37 @@
             border-top: 1px dashed #e2dcd2;
             padding-top: 8px;
         }
+
         .bilingual {
-            background: #fff8ef;
+            background: rgba(255, 248, 239, 0.9);
             padding: 20px 24px;
-            border-radius: 20px;
+            border-radius: 24px;
             margin: 28px 0;
             border-left: 5px solid #e6b422;
+            backdrop-filter: blur(2px);
         }
+
         .bilingual .zh {
             font-weight: 500;
             margin-bottom: 10px;
             font-size: 1.02rem;
         }
+
         .bilingual .en {
             color: #5a6e5c;
             font-style: italic;
             font-size: 0.95rem;
         }
+
         .feature-list {
-            background: #ffffffea;
+            background: rgba(255, 255, 255, 0.94);
             border-radius: 24px;
             padding: 20px 28px;
             margin: 20px 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             border: 1px solid #eae2d6;
         }
+
         .feature-list li {
             margin-bottom: 14px;
             line-height: 1.5;
@@ -153,9 +196,11 @@
             padding-left: 24px;
             position: relative;
         }
+
         .feature-list li strong {
             color: #2c5e2e;
         }
+
         .feature-list li:before {
             content: "🌿";
             position: absolute;
@@ -164,6 +209,7 @@
             color: #e6b422;
             font-size: 1rem;
         }
+
         .doctor-card {
             background: #fef7e8;
             border-radius: 20px;
@@ -171,11 +217,103 @@
             margin: 15px 0;
             border-left: 4px solid #2c5e2e;
         }
-        .doctor-card h5 {
-            font-size: 1.3rem;
-            color: #1f4f21;
-            margin-bottom: 6px;
+
+        /* 文章详情页样式 */
+        .article-page {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255, 255, 245, 0.96);
+            border-radius: 40px;
+            padding: 40px 48px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0d5c0;
         }
+
+        .article-page h1 {
+            font-size: 2.2rem;
+            color: #2c5e2e;
+            margin-bottom: 16px;
+            border-left: 8px solid #e6b422;
+            padding-left: 20px;
+        }
+
+        .article-meta {
+            color: #8b7a62;
+            margin-bottom: 32px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e6dccc;
+            padding-bottom: 12px;
+        }
+
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #2c3e2f;
+        }
+
+        .article-content .zh-section {
+            margin-bottom: 2rem;
+        }
+
+        .article-content .en-section {
+            color: #5a6e5c;
+            border-top: 1px solid #e9e2d4;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            font-style: normal;
+        }
+
+        .related-articles {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 2px dashed #e6b422;
+        }
+
+        .related-articles h4 {
+            font-size: 1.4rem;
+            color: #2c5e2e;
+            margin-bottom: 20px;
+        }
+
+        .related-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .related-item {
+            background: #f5efdf;
+            padding: 12px 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            color: #2c5e2e;
+            border: 1px solid #ddd0b6;
+        }
+
+        .related-item:hover {
+            background: #e6b42220;
+            transform: translateX(4px);
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-bottom: 24px;
+            background: #3b7840;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .back-home:hover {
+            background: #2c5e2e;
+            transform: translateY(-2px);
+        }
+
         footer {
             background: #2c3e2f;
             color: #ddd;
@@ -184,179 +322,252 @@
             margin-top: 60px;
             font-size: 0.9rem;
         }
+
         @media (max-width: 768px) {
             .hero h2 { font-size: 1.5rem; }
             .section h3 { font-size: 1.5rem; }
             nav a { margin: 0 8px; font-size: 0.85rem; }
             .card { flex: 1 1 100%; }
+            .article-page { padding: 24px 20px; }
+            .article-page h1 { font-size: 1.6rem; }
+        }
+
+        .view {
+            display: none;
+        }
+
+        .view.active {
+            display: block;
         }
     </style>
 </head>
 <body>
-<header>
-    <div class="container">
-        <h1>🌿 青医传语</h1>
-        <p>Qingyi's Voice · 数字丝路的中医密码</p>
-    </div>
-</header>
-<nav>
-    <a href="#basics">📖 中医基础理论</a>
-    <a href="#xin-an">🏔️ 新安医学</a>
-    <a href="#wellness">🧘 养生专栏</a>
-</nav>
+<div class="main-wrapper">
+    <!-- 首页视图 -->
+    <div id="homeView" class="view active">
+        <header>
+            <div class="container">
+                <h1>🌿 青医传语</h1>
+                <p>Qingyi's Voice · 数字丝路的中医密码</p>
+            </div>
+        </header>
+        <nav>
+            <a data-nav="home">首页</a>
+            <a data-nav="basics">📖 中医基础理论</a>
+            <a data-nav="xin-an">🏔️ 新安医学</a>
+            <a data-nav="wellness">🧘 养生专栏</a>
+        </nav>
 
-<div class="hero">
-    <div class="container">
-        <h2>千年医脉，丝路新语</h2>
-        <p>融汇中医精粹 · 新安学术明珠 · 东方生活美学</p>
-        <p style="font-size: 1rem; margin-top: 15px;">TCM Foundations | Xin'an Heritage | Holistic Wellness</p>
+        <div class="hero">
+            <div class="container">
+                <h2>千年医脉，丝路新语</h2>
+                <p>融汇中医精粹 · 新安学术明珠 · 东方生活美学</p>
+                <p style="font-size: 1rem; margin-top: 15px;">TCM Foundations | Xin'an Heritage | Holistic Wellness</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <section id="basics" class="section">
+                <h3>📖 中医基础理论 · Fundamental Theories of TCM</h3>
+                <div class="bilingual">
+                    <div class="zh">中医理论体系以中国古代哲学为根基，涵盖阴阳五行、脏腑经络等核心学说，强调整体观念与辨证论治。以下精选十二大基石理论，点击卡片深入探索。</div>
+                    <div class="en">Rooted in ancient Chinese philosophy, TCM emphasizes holistic view and pattern differentiation. Click cards to explore each theory in depth.</div>
+                </div>
+                <div class="card-grid" id="basicsGrid"></div>
+            </section>
+
+            <section id="xin-an" class="section">
+                <h3>🏔️ 新安医学 · Xin'an Medicine — 徽州儒医 千年流派</h3>
+                <div class="bilingual">
+                    <div class="zh"><strong>🏯 什么是新安医学？</strong><br>新安医学发源于古徽州（今安徽黄山地区），始于晋唐，鼎盛于明清，是中医史上学术体系最完备、影响最深远的地域流派之一。历代名医辈出，医籍浩如烟海，具有“儒医相通、家族链传、固本培元”等鲜明特色，被誉为“天下名医出新安”。</div>
+                    <div class="en">Originating in ancient Huizhou (Huangshan, Anhui), Xin'an Medicine flourished from the Song to Qing dynasties. Known for scholarly physicians, family inheritance, and the “consolidating the root” theory, it represents one of the most influential regional TCM schools.</div>
+                </div>
+                <div class="card-grid" id="xinAnGrid"></div>
+            </section>
+
+            <section id="wellness" class="section">
+                <h3>🧘 养生专栏 · Timeless Wellness Wisdom</h3>
+                <div class="bilingual">
+                    <div class="zh">中医养生讲究“法于阴阳，和于术数，食饮有节，起居有常”。本专栏融合传统养生法、药食同源精髓与常用中药妙用，点击卡片获取完整养生智慧。</div>
+                    <div class="en">TCM wellness follows nature's rhythm, balances diet, and cultivates mind-body harmony. Click cards to explore complete wellness articles.</div>
+                </div>
+                <div class="card-grid" id="wellnessGrid"></div>
+            </section>
+        </div>
+        <footer>
+            <div class="container">
+                <p>🌐 微信公众号：龟寿Health and Longevity | 抖音：79991222635 | 小红书：GUISHOU_99</p>
+                <p>📧 邮箱：qyvoice@tcm.com | 青医传语 · 传承中医 链接世界</p>
+                <p>© 2026 青医传语 · 数字丝路的中医密码 | 让古老智慧焕发新生</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 文章详情视图 -->
+    <div id="articleView" class="view">
+        <div id="articleContainer"></div>
     </div>
 </div>
 
-<div class="container">
-    <!-- ================= 模块一：中医基础理论（不少于10条） ================= -->
-    <section id="basics" class="section">
-        <h3>📖 中医基础理论 · Fundamental Theories of TCM</h3>
-        <div class="bilingual">
-            <div class="zh">中医理论体系以中国古代哲学为根基，涵盖阴阳五行、脏腑经络等核心学说，强调整体观念与辨证论治。以下精选十大基石理论，开启中医智慧之门。</div>
-            <div class="en">Rooted in ancient Chinese philosophy, TCM emphasizes holistic view and pattern differentiation. Here are ten essential theories that form the foundation of this profound medical system.</div>
-        </div>
-        <div class="card-grid">
-            <!-- 1 阴阳 -->
-            <div class="card"><h4>☯ 阴阳 · Yin-Yang</h4><p>对立统一、互根互用。阴阳平衡则健康，偏颇则病生。中医治则“寒者热之，热者寒之”。</p><div class="en">Opposition & interdependence. Health depends on dynamic balance; treatment aims to restore harmony.</div></div>
-            <!-- 2 五行 -->
-            <div class="card"><h4>🪵 五行 · Five Elements</h4><p>木火土金水相生相克，对应五脏（肝心脾肺肾）。五行制化维持人体生理协调。</p><div class="en">Wood, Fire, Earth, Metal, Water — mutual generation/restriction, explaining visceral interactions.</div></div>
-            <!-- 3 气 -->
-            <div class="card"><h4>🌬️ 气 · Qi</h4><p>构成生命的最基本物质，推动、温煦、防御、固摄。气虚则倦怠，气滞则胀痛。</p><div class="en">Vital energy that drives all activities; deficiency leads to fatigue, stagnation causes pain.</div></div>
-            <!-- 4 血 -->
-            <div class="card"><h4>🩸 血 · Blood</h4><p>濡养脏腑、四肢百骸。心血虚则失眠健忘，肝血虚则目涩筋挛。</p><div class="en">Nourishes the whole body; related to heart and liver functions, affects spirit and sinews.</div></div>
-            <!-- 5 津液 -->
-            <div class="card"><h4>💧 津液 · Body Fluids</h4><p>滋润官窍、关节、皮肤。津亏则口干便秘，水肿则为津液输布失常。</p><div class="en">Moistens tissues and orifices; abnormal distribution causes dryness or edema.</div></div>
-            <!-- 6 脏腑 -->
-            <div class="card"><h4>🏛️ 脏腑 · Zang-Fu Organs</h4><p>五脏（心肝脾肺肾）藏精气，六腑传化物。脏病多虚，腑病多实。</p><div class="en">Five Zang store essence, Six Fu transport substances. Core of physiological pathology.</div></div>
-            <!-- 7 经络 -->
-            <div class="card"><h4>🌀 经络 · Meridians</h4><p>气血运行通道，联络脏腑肢节。针灸推拿通过经络调治百病。</p><div class="en">Channels distributing Qi & Blood, connecting interior and exterior; basis for acupuncture.</div></div>
-            <!-- 8 整体观念 -->
-            <div class="card"><h4>🌍 整体观念 · Holism</h4><p>人是一个有机整体，与自然、社会统一。治病必求于本，天人相应。</p><div class="en">Humans integrate with nature; treatment considers environment, emotions, and constitution.</div></div>
-            <!-- 9 辨证论治 -->
-            <div class="card"><h4>📋 辨证论治 · Pattern Differentiation</h4><p>四诊合参，辨病因病机，制定个性化治则。同病异治，异病同治。</p><div class="en">Diagnosis based on symptoms, signs, and context; tailored herbal formulas & therapies.</div></div>
-            <!-- 10 肾主藏精 -->
-            <div class="card"><h4>🌱 肾藏精 · Kidney Stores Essence</h4><p>肾为先天之本，主生长发育、生殖。肾精亏虚则早衰、不孕。</p><div class="en">Kidney stores congenital essence; governs growth, reproduction, and aging process.</div></div>
-            <!-- 11 脾主运化 -->
-            <div class="card"><h4>🍚 脾主运化 · Spleen Governs Transport</h4><p>脾为后天之本，运化水谷精微。脾虚则腹胀、乏力、湿浊内生。</p><div class="en">Spleen transforms food into Qi and Blood; deficiency causes fatigue and dampness.</div></div>
-            <!-- 12 心主血脉 -->
-            <div class="card"><h4>❤️ 心主血脉 · Heart Governs Blood</h4><p>心气推动血液运行，心血濡养全身。心藏神，主宰精神活动。</p><div class="en">Heart propels blood circulation and houses the mind; palpitation & insomnia relate to heart.</div></div>
-        </div>
-        <div class="bilingual">
-            <div class="zh">以上十二条理论相互交织，构筑中医“理法方药”的独特体系，是临证与养生的根本。</div>
-            <div class="en">These twelve theories interweave to form the unique system of TCM, guiding clinical practice and daily wellness.</div>
-        </div>
-    </section>
+<script>
+    // ================= 文章数据（中英双语完整版） =================
+    const basicsArticles = [
+        { id: "yin-yang", title: "阴阳 · Yin-Yang", category: "basics", contentZh: `<p>阴阳学说贯穿中医理论始终。阴阳对立制约、互根互用、消长平衡、相互转化。人体健康在于“阴平阳秘”，疾病源于阴阳失调。治疗原则：寒者热之，热者寒之；虚则补其母，实则泻其子。日常生活中，昼夜作息、饮食寒热、情绪动静皆需阴阳调和。</p><p>《素问·生气通天论》曰：“阴平阳秘，精神乃治；阴阳离决，精气乃绝。” 阴阳理论不仅用于诊断，也是养生根本。例如，夜晚属阴，宜静卧养阴；白天属阳，宜活动升阳。</p><h3>临床应用</h3><p>阴虚则热，阳虚则寒。六味地黄丸滋阴，金匮肾气丸温阳，皆是调和阴阳的典范。</p>`, contentEn: `<p>The theory of Yin-Yang runs through TCM. Yin and Yang oppose yet complement each other, transform and balance. Health is "Yin in peace, Yang in harmony"; disease arises from imbalance. Treatment: cold conditions with heat, heat with cold; tonify the mother or drain the child in five-element terms. Daily life—day and night, food temperature, emotions—should balance Yin and Yang.</p><p>Su Wen states: "When Yin is calm and Yang is secure, spirit and vitality are regulated; if they separate, essence and Qi decline." Yin-Yang guides both diagnosis and wellness. Night is Yin, rest to nourish Yin; day is Yang, activity to elevate Yang.</p><h3>Clinical Application</h3><p>Yin deficiency causes heat, Yang deficiency causes cold. Liuwei Dihuang Wan nourishes Yin; Jinkui Shenqi Wan warms Yang—classic formulas for harmonizing Yin-Yang.</p>` },
+        { id: "five-elements", title: "五行 · Five Elements", category: "basics", contentZh: `<p>木、火、土、金、水对应肝、心、脾、肺、肾。相生：木生火，火生土，土生金，金生水，水生木；相克：木克土，土克水，水克火，火克金，金克木。五行制化维持脏腑平衡。例如，肝木过旺则克脾土，出现胃胀、纳差，治宜疏肝健脾。</p><p>五行的生克乘侮揭示了疾病传变规律，指导“见肝之病，知肝传脾，当先实脾”的治未病思想。</p>`, contentEn: `<p>Wood, Fire, Earth, Metal, Water correspond to Liver, Heart, Spleen, Lung, Kidney. Generation: Wood feeds Fire, Fire creates Earth, Earth bears Metal, Metal holds Water, Water nourishes Wood. Restriction: Wood restrains Earth, Earth dams Water, Water extinguishes Fire, Fire melts Metal, Metal chops Wood. Balance among organs maintains health. For example, hyperactive Wood (Liver) may attack Earth (Spleen), causing bloating; treat by soothing Liver and strengthening Spleen.</p><p>The inter-promotion and inter-restriction explain disease transmission, guiding the principle: "When seeing Liver disease, know it may affect Spleen, so fortify Spleen first."</p>` },
+        { id: "qi", title: "气 · Qi", category: "basics", contentZh: `<p>气是构成人体和维持生命活动的最基本物质。元气、宗气、营气、卫气各司其职。气虚则乏力、自汗；气滞则胀痛；气逆则咳喘、呕吐。补气常用人参、黄芪，理气用陈皮、香附。气功、八段锦通过调气养生。</p><p>《难经》云：“气者，人之根本也。” 气机升降出入失常是疾病核心病机之一。</p>`, contentEn: `<p>Qi is the most basic substance constituting the human body and sustaining life. Primordial Qi, Pectoral Qi, Nutritive Qi, and Defensive Qi each have roles. Qi deficiency causes fatigue, spontaneous sweating; Qi stagnation leads to distending pain; rebellious Qi causes cough, vomiting. Tonify Qi with ginseng and astragalus; regulate Qi with tangerine peel and cyperus. Qigong and Ba Duan Jin cultivate Qi for wellness.</p><p>The Classic of Difficulties says: "Qi is the root of human life." Abnormal ascending, descending, exiting, and entering of Qi is a core pathogenesis.</p>` },
+        { id: "blood", title: "血 · Blood", category: "basics", contentZh: `<p>血由水谷精微化生，循脉而行，濡养脏腑百骸。心血虚则心悸失眠，肝血虚则目涩肢麻。血瘀则痛有定处，面色晦暗。补血常用当归、熟地，活血用川芎、丹参。血与气关系密切，“气为血之帅，血为气之母”。</p>`, contentEn: `<p>Blood is derived from food essence, circulates within vessels, nourishing organs and tissues. Heart blood deficiency causes palpitations, insomnia; Liver blood deficiency leads to dry eyes, numbness. Blood stasis causes fixed pain, dull complexion. Nourish blood with Angelica, Rehmannia; invigorate blood with Chuanxiong, Salvia. Qi and blood are intimately related: "Qi commands blood, blood is the mother of Qi."</p>` },
+        { id: "body-fluids", title: "津液 · Body Fluids", category: "basics", contentZh: `<p>津液是机体一切正常水液的总称。津稀薄，滋润肌肤；液稠厚，濡养关节脑髓。津液代谢与肺脾肾三脏密切相关。津亏则口干便结，水停则水肿痰饮。养阴生津用麦冬、沙参，利水渗湿用茯苓、泽泻。</p>`, contentEn: `<p>Body fluids encompass all normal liquids in the body. Thin fluids moisten skin and muscles; thick fluids lubricate joints and marrow. Metabolism of fluids closely involves Lung, Spleen, Kidney. Fluid deficiency causes dry mouth, constipation; fluid retention leads to edema, phlegm. Nourish yin and generate fluids with Ophiopogon, Glehnia; promote diuresis with Poria, Alisma.</p>` },
+        { id: "zangfu", title: "脏腑 · Zang-Fu Organs", category: "basics", contentZh: `<p>五脏（心肝脾肺肾）藏精气而不泻，六腑（胆胃大肠小肠膀胱三焦）传化物而不藏。脏病多虚，腑病多实。如脾虚运化无力，胃实则食积。脏腑表里相合，共同完成生理活动。</p>`, contentEn: `<p>The five Zang (Heart, Liver, Spleen, Lung, Kidney) store essence and do not discharge; the six Fu (Gallbladder, Stomach, Large Intestine, Small Intestine, Bladder, Triple Burner) transmit substances and do not store. Zang diseases are often deficiency, Fu diseases excess. For instance, Spleen deficiency leads to poor transportation, Stomach excess leads to food stagnation. Zang and Fu are externally-internally paired, coordinating physiological activities.</p>` },
+        { id: "meridians", title: "经络 · Meridians", category: "basics", contentZh: `<p>经络是气血运行通道，内属脏腑，外络肢节。十二正经、奇经八脉构成网络。针灸、推拿通过刺激腧穴调节经络，达到治疗目的。日常按揉合谷、足三里可保健强身。</p>`, contentEn: `<p>Meridians are channels for Qi and blood flow, connecting internally to Zang-Fu and externally to limbs. Twelve regular meridians and eight extraordinary vessels form the network. Acupuncture and tuina stimulate acupoints to regulate meridians. Daily massage of Hegu (LI4) and Zusanli (ST36) strengthens health.</p>` },
+        { id: "holism", title: "整体观念 · Holism", category: "basics", contentZh: `<p>人是一个有机整体，与自然、社会统一。季节变化、情绪波动、饮食起居均影响健康。治疗时注重“因人、因时、因地制宜”，强调身心共调。</p>`, contentEn: `<p>Humans are an organic whole, unified with nature and society. Seasonal changes, emotions, diet, and daily routines all affect health. Treatment emphasizes individualization, season, and location, harmonizing body and mind.</p>` },
+        { id: "pattern-diff", title: "辨证论治 · Pattern Differentiation", category: "basics", contentZh: `<p>四诊合参，辨病因、病位、病性、病势，确立治则方药。同病异治，异病同治，体现个体化医疗。如感冒分风寒、风热，治法迥异。</p>`, contentEn: `<p>Integrating four examinations, differentiate cause, location, nature, and trend to determine treatment principles and formulas. Same disease, different treatments; different diseases, same treatment—reflecting personalized medicine. For example, common cold is differentiated as wind-cold or wind-heat, with distinct therapies.</p>` },
+        { id: "kidney", title: "肾藏精 · Kidney Stores Essence", category: "basics", contentZh: `<p>肾为先天之本，主藏精，主生长发育生殖。肾精化肾气，分元阴元阳。肾虚则早衰、不孕、腰膝酸软。补肾常用熟地、山茱萸。</p>`, contentEn: `<p>Kidney is the root of congenital constitution, stores essence, governs growth, development, and reproduction. Kidney essence transforms into Kidney Qi, which divides into Yuan-Yin and Yuan-Yang. Kidney deficiency leads to premature aging, infertility, sore lower back and knees. Tonify Kidney with Rehmannia, Cornus.</p>` },
+        { id: "spleen", title: "脾主运化 · Spleen Governs Transport", category: "basics", contentZh: `<p>脾为后天之本，运化水谷精微，统摄血液。脾虚则腹胀、便溏、乏力、肌肉消瘦。健脾多用白术、山药、茯苓。</p>`, contentEn: `<p>Spleen is the root of acquired constitution, transports and transforms food essence, controls blood. Spleen deficiency causes abdominal distention, loose stools, fatigue, muscle wasting. Strengthen Spleen with Atractylodes, Yam, Poria.</p>` },
+        { id: "heart", title: "心主血脉 · Heart Governs Blood", category: "basics", contentZh: `<p>心气推动血液运行，心血濡养全身。心藏神，主宰精神活动。心血不足则心悸失眠，心脉瘀阻则胸痹刺痛。</p>`, contentEn: `<p>Heart Qi propels blood circulation; Heart blood nourishes the whole body. Heart houses the mind, governing mental activities. Heart blood deficiency causes palpitations, insomnia; Heart channel stasis leads to chest pain.</p>` }
+    ];
 
-    <!-- ================= 模块二：新安医学（介绍、主要医家、学术特色≥10条） ================= -->
-    <section id="xin-an" class="section">
-        <h3>🏔️ 新安医学 · Xin'an Medicine — 徽州儒医 千年流派</h3>
-        <!-- 什么是新安医学 -->
-        <div class="bilingual">
-            <div class="zh"><strong>🏯 什么是新安医学？</strong><br>新安医学发源于古徽州（今安徽黄山地区），始于晋唐，鼎盛于明清，是中医史上学术体系最完备、影响最深远的地域流派之一。历代名医辈出，医籍浩如烟海，具有“儒医相通、家族链传、固本培元”等鲜明特色，被誉为“天下名医出新安”。</div>
-            <div class="en">Originating in ancient Huizhou (Huangshan, Anhui), Xin'an Medicine flourished from the Song to Qing dynasties. Known for scholarly physicians, family inheritance, and the “consolidating the root” theory, it represents one of the most influential regional TCM schools.</div>
-        </div>
+    const xinanArticles = [
+        { id: "xin-an-intro", title: "新安医学总览 · Overview of Xin'an Medicine", category: "xin-an", contentZh: `<p>新安医学是发源于古徽州（今黄山）的重要地域流派，跨越晋唐至明清，名医辈出，著作宏富。其以“固本培元”“营卫一气”为核心，融儒入医，形成家族链传承，对温补学派、方剂学发展影响深远。代表医家汪机、徐春甫、汪昂、孙一奎等，留下《石山医案》《古今医统大全》《汤头歌诀》等不朽经典。</p><p>学术特色包括：1.固本培元；2.营卫一气说；3.命门动气；4.儒医一体；5.世医家族链；6.针灸方剂并重；7.本草考证精详；8.医案文献丰富；9.温补滋阴并举；10.医籍数量冠绝。至今仍为中医学术瑰宝。</p>`, contentEn: `<p>Xin'an Medicine originated in ancient Huizhou (Huangshan). Spanning from Jin-Tang to Ming-Qing dynasties, it produced numerous renowned physicians and extensive works. Its core concepts include "consolidating the root and cultivating the source" and "the unity of defensive and nutritive Qi." Integrating Confucianism with medicine, it formed family-based transmission, profoundly influencing the warming-tonifying school and formula science. Representative physicians: Wang Ji, Xu Chunfu, Wang Ang, Sun Yikui. Their classics include "Shishan Medical Cases," "Compendium of Ancient and Modern Medicine," and "Rhymed Formulas."</p><p>Academic features: 1. Consolidating the root; 2. Unity of defensive and nutritive Qi; 3. Vital Qi of the life-gate; 4. Integration of Confucianism and medicine; 5. Medical family lineages; 6. Emphasis on both acupuncture and formulas; 7. Detailed textual research on materia medica; 8. Rich medical case literature; 9. Balancing warming-tonifying and nourishing yin; 10. The largest number of medical texts. It remains a treasure of TCM.</p>` },
+        { id: "wang-ji", title: "汪机 · 固本培元之宗", category: "xin-an", contentZh: `<p>汪机（1463-1539），明代著名医家，新安医学奠基人。提出“营卫一气”说，认为营卫同源，补气即所以补营卫。临证善用参芪，创立“固本培元”法，治疗虚损杂病。著有《石山医案》《针灸问对》《医学原理》等。其学术思想深刻影响了后世温补学派。</p><p>代表方如“参苓白术散”加减应用，强调培补脾胃元气。汪机医案详实，辨证精当，为后人留下宝贵范例。</p>`, contentEn: `<p>Wang Ji (1463-1539), a famous physician of the Ming dynasty, laid the foundation for Xin'an Medicine. He proposed the "unity of defensive and nutritive Qi" theory, holding that they share the same source, thus tonifying Qi also tonifies both. He excelled in using Ginseng and Astragalus, creating the "consolidating the root" method for treating deficiency diseases. His works include "Shishan Medical Cases," "Questions and Answers on Acupuncture," and "Principles of Medicine." His thought deeply influenced later warming-tonifying schools.</p><p>His modifications of Shenling Baizhu San emphasized strengthening the spleen and stomach Qi. His detailed case records offer exemplary models for pattern differentiation.</p>` },
+        { id: "wang-ang", title: "汪昂 · 方剂启蒙之师", category: "xin-an", contentZh: `<p>汪昂（1615-1695），明末清初医家，代表作《汤头歌诀》《医方集解》《本草备要》。他将方剂编成歌诀，朗朗上口，成为中医入门必读。主张“医不拘门户，择善而从”，包容开放。其《医方集解》按功效分类方剂，体例严谨，影响深远。</p><p>“四君子汤中和义，参术茯苓甘草比”等歌诀至今传诵，极大促进了方剂学的普及。</p>`, contentEn: `<p>Wang Ang (1615-1695), a physician of the late Ming and early Qing, authored "Rhymed Formulas," "Collected Explanations of Formulas," and "Essentials of Materia Medica." He turned formulas into memorable rhymes, making them essential for beginners. He advocated "choose what is good without sectarian bias." His "Collected Explanations of Formulas" classifies formulas by function with rigorous style, exerting profound influence.</p><p>Rhymes like "The Four Gentlemen Decoction harmonizes the middle, Ginseng, Atractylodes, Poria, and Licorice" are still widely quoted, greatly popularizing formula science.</p>` },
+        { id: "xu-chunfu", title: "徐春甫 · 医学全书巨匠", category: "xin-an", contentZh: `<p>徐春甫（1520-1596），编撰《古今医统大全》一百卷，集明代以前医学大成，内容涵盖基础理论、临床各科、医家传记、养生等。他首倡“医家五戒十要”，重视医德规范。学术兼收并蓄，对后世医学全书编纂影响巨大。</p>`, contentEn: `<p>Xu Chunfu (1520-1596) compiled the "Compendium of Ancient and Modern Medicine" in 100 volumes, a grand collection of medical knowledge before the Ming dynasty, covering foundational theories, clinical specialties, physician biographies, and wellness. He first proposed the "Five Precepts and Ten Requirements" for physicians, emphasizing medical ethics. His eclectic scholarship greatly influenced later medical encyclopedias.</p>` },
+        { id: "sun-yikui", title: "孙一奎 · 命门动气学说", category: "xin-an", contentZh: `<p>孙一奎（1522-1619），著有《赤水玄珠》《医旨绪余》。提出“命门动气”理论，认为命门为肾间动气，是生命本源。强调温补下元，对温补学派贡献卓著。其论医理精微，开后世命门学说之先河。</p>`, contentEn: `<p>Sun Yikui (1522-1619) authored "Chishui Xuanzhu" and "Yizhi Xuyu." He proposed the theory of "vital Qi of the life-gate," considering the life-gate as the dynamic Qi between the kidneys, the source of life. He emphasized warming and tonifying the lower origin, making outstanding contributions to the warming-tonifying school. His subtle medical theories pioneered later life-gate doctrines.</p>` }
+    ];
 
-        <!-- 主要医家介绍 -->
-        <h4 style="font-size: 1.4rem; color: #2c5e2e; margin: 30px 0 15px 0;">📜 新安医家 · 群星璀璨</h4>
-        <div class="doctor-card">
-            <h5>汪机 (1463–1539) · 固本培元之宗</h5>
-            <p>明代著名医家，新安医学奠基人之一。提出“营卫一气”说，注重培补元气，善用参芪。著有《石山医案》《针灸问对》，影响深远。</p>
-            <div class="en">Wang Ji: Ming dynasty pioneer of “consolidating root & supplementing vital Qi”, emphasized the unity of defensive and nutritive Qi.</div>
-        </div>
-        <div class="doctor-card">
-            <h5>徐春甫 (1520–1596) · 医学全书巨匠</h5>
-            <p>编撰《古今医统大全》一百卷，集明以前医籍大成。首倡“医家五戒十要”，重视医德，学术兼收并蓄。</p>
-            <div class="en">Xu Chunfu: Author of "Compendium of Ancient and Modern Medicine", a monumental encyclopedia preserving TCM heritage.</div>
-        </div>
-        <div class="doctor-card">
-            <h5>汪昂 (1615–1695) · 方剂启蒙之师</h5>
-            <p>代表作《汤头歌诀》《医方集解》，将方剂编成歌诀，通俗易懂，至今为中医入门必读。主张“医不拘门户，择善而从”。</p>
-            <div class="en">Wang Ang: Created rhyming formulas for easy memorization; his works remain classic textbooks for TCM students.</div>
-        </div>
-        <div class="doctor-card">
-            <h5>孙一奎 (1522–1619) · 命门动气学说</h5>
-            <p>提出“命门动气”理论，强调肾间动气为生命本源，著有《赤水玄珠》《医旨绪余》，对温补学派贡献卓著。</p>
-            <div class="en">Sun Yikui: Advanced the "vital Qi of life-gate" theory, enriching the school of tonification.</div>
-        </div>
+    const wellnessArticles = [
+        { id: "season-wellness", title: "四季养生法 · Seasonal Wellness", category: "wellness", contentZh: `<p>春生夏长，秋收冬藏。春季养肝，宜疏肝理气，多吃绿色蔬菜，踏青远足；夏季养心，清心泻火，午睡养心；秋季养肺，润燥滋阴，食梨银耳；冬季养肾，温补藏精，早卧晚起。顺时调摄，可事半功倍。</p>`, contentEn: `<p>Spring generates, summer grows, autumn harvests, winter stores. In spring, nourish the Liver by soothing its Qi, eat green vegetables, go hiking. In summer, nourish the Heart by clearing heat, take a nap. In autumn, nourish the Lung by moistening dryness, eat pears and white fungus. In winter, nourish the Kidney by warming and storing essence, sleep early and rise late. Following the seasons yields twice the result with half the effort.</p>` },
+        { id: "emotion-wellness", title: "情志养生 · Emotional Wellness", category: "wellness", contentZh: `<p>喜伤心，怒伤肝，思伤脾，悲伤肺，恐伤肾。保持心态平和，避免过激情绪。可习练书法、静坐、听音乐以宁心安神。中医强调“精神内守，病安从来”。</p>`, contentEn: `<p>Excessive joy harms the Heart, anger harms the Liver, pensiveness harms the Spleen, sorrow harms the Lung, fear harms the Kidney. Maintain a calm mind, avoid intense emotions. Practice calligraphy, meditation, or music to calm the spirit. TCM emphasizes: "Keep the spirit within, where can disease come from?"</p>` },
+        { id: "diet-wellness", title: "饮食有节 · Diet Principles", category: "wellness", contentZh: `<p>“五谷为养，五果为助，五畜为益，五菜为充。” 饮食宜清淡，定时定量，避免过饱过饥。根据体质选择食物，阳虚者食温补，阴虚者食滋润。食疗药膳如山药粥、当归生姜羊肉汤，既美味又养生。</p>`, contentEn: `<p>"Grains nourish, fruits assist, meats benefit, vegetables supplement." Diet should be light, regular, and moderate, avoiding extremes. Choose foods according to constitution: warming foods for Yang deficiency, moistening foods for Yin deficiency. Medicinal meals like yam porridge and angelica-ginger-mutton soup are both delicious and healthful.</p>` },
+        { id: "daily-wellness", title: "起居有常 · Daily Routine", category: "wellness", contentZh: `<p>子时（23:00-1:00）前入睡养胆气，午时小憩养心气。顺应昼夜节律，不妄作劳。睡前温水泡脚，按摩涌泉穴，助眠安神。</p>`, contentEn: `<p>Sleep before midnight (23:00-1:00) to nourish Gallbladder Qi; take a short nap at noon to nourish Heart Qi. Follow the circadian rhythm, avoid overexertion. Soak feet in warm water before bed, massage Yongquan (KI1) to aid sleep and calm the spirit.</p>` },
+        { id: "exercise-wellness", title: "运动导引 · Exercise & Daoyin", category: "wellness", contentZh: `<p>八段锦、太极拳、五禽戏等柔和运动，调和气血，强筋健骨。每日晨起练习15分钟，以微汗为度，忌大汗耗气。尤其“两手托天理三焦”“调理脾胃须单举”等动作对脏腑有益。</p>`, contentEn: `<p>Gentle exercises like Ba Duan Jin, Tai Chi, and Five Animal Frolics harmonize Qi and blood, strengthen sinews and bones. Practice for 15 minutes each morning, sweating slightly, avoiding profuse sweating that depletes Qi. Movements such as "Two hands hold up the heavens to regulate triple burner" and "Single lift to regulate spleen and stomach" benefit the organs.</p>` },
+        { id: "food-medicine", title: "药食同源 · Medicinal Foods", category: "wellness", contentZh: `<p>许多中药既是食材，如山药、山楂、薏米、大枣、枸杞。日常搭配可调养体质。例如：山药健脾，薏米祛湿，大枣补血。药膳是中医预防疾病的重要方式。</p>`, contentEn: `<p>Many Chinese herbs are also foods, such as yam, hawthorn, coix seed, jujube, goji. Daily combinations can adjust constitution. For example, yam strengthens the spleen, coix seed eliminates dampness, jujube nourishes blood. Medicinal diet is an important preventive approach in TCM.</p>` },
+        { id: "goji", title: "枸杞子 · Goji Berry", category: "wellness", contentZh: `<p>枸杞子甘平，归肝、肾经。滋补肝肾，益精明目。用于虚劳精亏，腰膝酸痛，目昏不明。可泡水、煮粥、煲汤。每日10-15克为宜，外感实热时慎用。</p>`, contentEn: `<p>Goji berry is sweet and neutral, enters Liver and Kidney channels. Nourishes Liver and Kidney, benefits essence and improves vision. Used for deficiency fatigue, sore lower back and knees, blurred vision. Steep in water, add to porridge, or soups. Daily 10-15g, avoid during acute febrile conditions.</p>` },
+        { id: "astragalus", title: "黄芪 · Astragalus", category: "wellness", contentZh: `<p>黄芪甘温，补气升阳，固表止汗，利水消肿。气虚乏力、易感冒者常用。可与红枣泡茶，或炖鸡汤。注意实热证、阴虚火旺者不宜。</p>`, contentEn: `<p>Astragalus is sweet and warm, tonifies Qi and raises Yang, secures the exterior to stop sweating, promotes diuresis to reduce edema. Often used for Qi deficiency with fatigue and frequent colds. Pair with jujube in tea or chicken soup. Avoid in cases of excess heat or yin deficiency with fire.</p>` },
+        { id: "angelica", title: "当归 · Angelica", category: "wellness", contentZh: `<p>当归甘辛温，补血活血，调经止痛。为血虚、血瘀之要药。食疗常配生姜、羊肉。孕妇及月经量多者慎用。</p>`, contentEn: `<p>Angelica is sweet, pungent, and warm, nourishes blood, invigorates blood, regulates menstruation and relieves pain. It is a key herb for blood deficiency and stasis. In diet, often paired with ginger and mutton. Caution in pregnancy and heavy menstruation.</p>` },
+        { id: "poria", title: "茯苓 · Poria", category: "wellness", contentZh: `<p>茯苓甘淡平，利水渗湿，健脾宁心。用于脾虚湿盛、失眠心悸。薏苓粥祛湿消肿，可日常食用。</p>`, contentEn: `<p>Poria is sweet, bland, and neutral, promotes diuresis to drain dampness, strengthens the spleen, calms the mind. Used for spleen deficiency with dampness, insomnia, palpitations. Coix-Poria porridge removes dampness and reduces edema; can be consumed daily.</p>` },
+        { id: "yam", title: "山药 · Chinese Yam", category: "wellness", contentZh: `<p>山药甘平，补脾养胃，生津益肺，补肾涩精。脾肺肾三脏同补，平补良药。可蒸食、煮粥、炖汤。</p>`, contentEn: `<p>Yam is sweet and neutral, tonifies spleen and stomach, generates fluids and benefits lung, nourishes kidney and stabilizes essence. It gently tonifies all three organs—spleen, lung, kidney. Steam, add to porridge, or stew.</p>` },
+        { id: "hegu", title: "合谷穴 · Hegu (LI4)", category: "wellness", contentZh: `<p>合谷穴位于手背虎口处，第一、二掌骨间。按压1-2分钟可疏风解表、通络止痛，缓解头痛、牙痛、感冒不适。日常保健常用。</p>`, contentEn: `<p>Hegu (LI4) is on the hand dorsum, between first and second metacarpal bones. Press for 1-2 minutes to release the exterior, unblock channels, relieve pain, alleviate headache, toothache, and cold symptoms. Commonly used for daily health maintenance.</p>` },
+        { id: "zusanli", title: "足三里 · Zusanli (ST36)", category: "wellness", contentZh: `<p>足三里为强壮要穴，位于外膝眼下四横指处。常按揉或艾灸可调理脾胃、补中益气、延年益寿。是养生第一穴。</p>`, contentEn: `<p>Zusanli (ST36) is a vital strengthening point, located four finger-widths below the outer knee. Regular massage or moxibustion regulates the spleen and stomach, tonifies middle Qi, and promotes longevity. It is the premier acupoint for health preservation.</p>` }
+    ];
 
-        <!-- 学术特色 不少于10条 -->
-        <h4 style="font-size: 1.4rem; color: #2c5e2e; margin: 35px 0 15px 0;">✨ 新安学术特色 · 十大精粹</h4>
-        <ul class="feature-list">
-            <li><strong>1. 固本培元理论：</strong>汪机首倡“培元固本”，重视人参、黄芪补气，强调脾胃元气为根本，影响温补学派。</li>
-            <li><strong>2. 营卫一气说：</strong>汪机提出“营卫同源”，营卫调和则无病，突破了传统营卫分治观点。</li>
-            <li><strong>3. 命门动气学说：</strong>孙一奎以命门为肾间动气，将先天之火与人体生命原动力结合，完善命门理论。</li>
-            <li><strong>4. 医儒一体 儒门事亲：</strong>新安医家多为儒士，以格物致知治学，医学著作富有哲学思辨，医德高尚。</li>
-            <li><strong>5. 世医家族链：</strong>形成“家族内传、世代行医”现象，如歙县吴氏、王氏等，医术薪火相传数百年。</li>
-            <li><strong>6. 针灸与方剂并重：</strong>汪机《针灸问对》考辨针法，同时新安医家精研方剂配伍，汪昂方剂学贡献极大。</li>
-            <li><strong>7. 本草考证精详：</strong>新安医家注重道地药材，陈嘉谟《本草蒙筌》为明代重要本草著作，详辨炮制。</li>
-            <li><strong>8. 医案文献学发达：</strong>《石山医案》《孙文垣医案》等大量医案，实证精神突出，为后世辨证提供范例。</li>
-            <li><strong>9. 温补与滋阴并举：</strong>既善用温补治疗虚寒，又重视养阴清润，不偏不倚，治法圆机活法。</li>
-            <li><strong>10. 医籍数量冠绝：</strong>有记载新安医家近500人，医著逾350部，《古今医统大全》《医宗金鉴》（部分编修）均与新安渊源深厚。</li>
-            <li><strong>11. 中医启蒙大众化：</strong>汪昂《汤头歌诀》《医方集解》以通俗歌诀普及医学，开医学通俗化先河。</li>
-            <li><strong>12. 兼容创新，开放进取：</strong>主张“参合中西医理之长”，徐春甫、汪昂皆提倡博采众方，无门户之见。</li>
-        </ul>
-        <div class="bilingual">
-            <div class="zh">新安医学不仅是一个地域流派，更代表了中国古代医家追求真理、济世活人的精神。其学术思想至今仍指导临床与科研。</div>
-            <div class="en">Xin'an Medicine embodies the spirit of seeking truth and benefiting humanity. Its academic legacy continues to inspire modern TCM practice.</div>
-        </div>
-    </section>
+    // 构建文章映射
+    const articlesMap = new Map();
+    [...basicsArticles, ...xinanArticles, ...wellnessArticles].forEach(art => {
+        articlesMap.set(art.id, art);
+    });
 
-    <!-- ================= 模块三：养生专栏（养生方法、药食同源、常用中药功能等，≥10条内容） ================= -->
-    <section id="wellness" class="section">
-        <h3>🧘 养生专栏 · Timeless Wellness Wisdom</h3>
-        <div class="bilingual">
-            <div class="zh">中医养生讲究“法于阴阳，和于术数，食饮有节，起居有常”。本专栏融合传统养生法、药食同源精髓与常用中药妙用，助您颐养身心。</div>
-            <div class="en">TCM wellness follows nature's rhythm, balances diet, and cultivates mind-body harmony. Explore traditional methods, medicinal foods, and herbal essentials.</div>
-        </div>
-        <div class="card-grid">
-            <!-- 1 四季养生 -->
-            <div class="card"><h4>🌸 四季养生</h4><p>春养肝（疏肝气），夏养心（清心火），秋养肺（润肺燥），冬养肾（藏精气）。顺时调摄，事半功倍。</p><div class="en">Align lifestyle with seasons: nourish corresponding organs and adapt daily routines.</div></div>
-            <!-- 2 情志养生 -->
-            <div class="card"><h4>😌 情志养生</h4><p>喜伤心、怒伤肝、思伤脾、悲伤肺、恐伤肾。保持恬淡虚无，精神内守，病安从来。</p><div class="en">Emotions directly affect organs; cultivate calmness and balance mental activities.</div></div>
-            <!-- 3 饮食有节 -->
-            <div class="card"><h4>🥗 饮食养生</h4><p>五谷为养，五果为助，五畜为益，五菜为充。忌过饱过饥，少肥甘厚味，食宜清淡温和。</p><div class="en">Eat whole grains, seasonal vegetables, moderate meat; avoid excess greasy or raw food.</div></div>
-            <!-- 4 起居有常 -->
-            <div class="card"><h4>🛌 起居有常</h4><p>日出而作，日落而息。子时前入睡养胆气，午时小憩养心气。不妄作劳，形劳而不倦。</p><div class="en">Regular sleep-wake cycle; nap at noon, sleep before midnight to preserve vital essence.</div></div>
-            <!-- 5 运动导引 -->
-            <div class="card"><h4>🧘 运动养生</h4><p>八段锦、太极拳、五禽戏调和气血，柔筋健骨。每日微汗为宜，不宜大汗淋漓。</p><div class="en">Gentle exercises like Ba Duan Jin improve Qi circulation; avoid excessive sweating.</div></div>
-            <!-- 6 药食同源概念 -->
-            <div class="card"><h4>🍲 药食同源 · 寓医于食</h4><p>许多中药既是食材，如山药、山楂、薏米、大枣。日常搭配可调养体质，防治未病。</p><div class="en">Medicinal foods bridge nutrition and therapy; daily consumption helps prevent diseases.</div></div>
-            <!-- 7 枸杞子 -->
-            <div class="card"><h4>🔴 枸杞子 · Goji Berry</h4><p>滋补肝肾，益精明目。用于目昏、腰膝酸软。可泡水、煮粥，平补佳品。</p><div class="en">Nourishes liver and kidney, improves vision; mild tonic suitable for daily use.</div></div>
-            <!-- 8 黄芪 -->
-            <div class="card"><h4>🌾 黄芪 · Astragalus</h4><p>补气固表，利水消肿。气虚乏力、易感冒者常用。可与红枣泡茶，提升免疫力。</p><div class="en">Tonifies Qi, strengthens immune system; classic herb for fatigue and weak constitution.</div></div>
-            <!-- 9 当归 -->
-            <div class="card"><h4>🌿 当归 · Angelica Sinensis</h4><p>补血活血，调经止痛。血虚萎黄、月经不调之要药。食疗常配生姜羊肉。</p><div class="en">Nourishes blood, regulates menstruation; often used in women's health formulas.</div></div>
-            <!-- 10 茯苓 -->
-            <div class="card"><h4>🍄 茯苓 · Poria</h4><p>健脾渗湿，宁心安神。脾虚湿盛、失眠心悸可用。薏苓粥祛湿消肿。</p><div class="en">Drains dampness, strengthens spleen, calms the mind; excellent for digestive health.</div></div>
-            <!-- 11 山药 -->
-            <div class="card"><h4>🍠 山药 · Chinese Yam</h4><p>补脾养胃，生津益肺，补肾涩精。脾肺肾三脏同补，平补良药。</p><div class="en">Tonifies spleen, lung, and kidney; gentle nourishing food for all ages.</div></div>
-            <!-- 12 合谷穴保健 -->
-            <div class="card"><h4>✋ 合谷穴 · Hegu (LI4)</h4><p>位于虎口，按压可疏风解表、止痛通络。缓解头痛、牙痛，日常保健常用。</p><div class="en">Press Hegu point to relieve pain, boost immunity; essential self-acupressure point.</div></div>
-            <!-- 13 足三里 -->
-            <div class="card"><h4>🦵 足三里 · ST36</h4><p>强壮要穴，调理脾胃，补中益气。常按揉或艾灸，延年益寿。</p><div class="en">Master point for vitality, regulates digestion, strengthens whole body.</div></div>
-            <!-- 14 艾灸养生 -->
-            <div class="card"><h4>🔥 艾灸温阳</h4><p>艾灸关元、气海、足三里，温通经络，驱寒除湿，提升阳气，尤适合虚寒体质。</p><div class="en">Moxibustion warms meridians, boosts Yang energy; ideal for cold-damp conditions.</div></div>
-        </div>
-        <div class="bilingual">
-            <div class="zh">💚 养生不是老年人的专利，而是贯穿生命全程的智慧。从每日一杯枸杞茶，到睡前按揉足三里，让中医生活化，健康自然来。</div>
-            <div class="en">Wellness is a lifelong journey. Integrate small TCM habits into daily life — sip goji tea, massage acupoints — and embrace harmony.</div>
-        </div>
-    </section>
-</div>
+    // 渲染首页卡片
+    function renderCards() {
+        const basicsGrid = document.getElementById('basicsGrid');
+        const xinanGrid = document.getElementById('xinAnGrid');
+        const wellnessGrid = document.getElementById('wellnessGrid');
 
-<footer>
-    <div class="container">
-        <p>🌐 微信公众号：龟寿Health and Longevity | 抖音：79991222635 | 小红书：GUISHOU_99</p>
-        <p>📧 邮箱：qyvoice@tcm.com | 青医传语 · 传承中医 链接世界</p>
-        <p>© 2026 青医传语 · 数字丝路的中医密码 | 让古老智慧焕发新生</p>
-    </div>
-</footer>
+        basicsGrid.innerHTML = basicsArticles.map(art => `
+            <div class="card" data-id="${art.id}">
+                <h4>${art.title.split('·')[0]}</h4>
+                <p>${art.contentZh.substring(0, 80).replace(/<[^>]*>/g, '')}...</p>
+                <div class="en">${art.contentEn.substring(0, 80).replace(/<[^>]*>/g, '')}...</div>
+            </div>
+        `).join('');
+
+        xinanGrid.innerHTML = xinanArticles.map(art => `
+            <div class="card" data-id="${art.id}">
+                <h4>${art.title.split('·')[0]}</h4>
+                <p>${art.contentZh.substring(0, 80).replace(/<[^>]*>/g, '')}...</p>
+                <div class="en">${art.contentEn.substring(0, 80).replace(/<[^>]*>/g, '')}...</div>
+            </div>
+        `).join('');
+
+        wellnessGrid.innerHTML = wellnessArticles.map(art => `
+            <div class="card" data-id="${art.id}">
+                <h4>${art.title.split('·')[0]}</h4>
+                <p>${art.contentZh.substring(0, 80).replace(/<[^>]*>/g, '')}...</p>
+                <div class="en">${art.contentEn.substring(0, 80).replace(/<[^>]*>/g, '')}...</div>
+            </div>
+        `).join('');
+
+        // 绑定卡片点击事件
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                const id = card.dataset.id;
+                if (id && articlesMap.has(id)) {
+                    showArticle(id);
+                }
+            });
+        });
+    }
+
+    // 展示文章详情（双语）
+    function showArticle(articleId) {
+        const article = articlesMap.get(articleId);
+        if (!article) return;
+
+        // 获取同模块相关文章
+        const sameCategory = [...basicsArticles, ...xinanArticles, ...wellnessArticles].filter(a => a.category === article.category && a.id !== article.id);
+        const relatedHtml = sameCategory.slice(0, 4).map(rel => `
+            <div class="related-item" data-id="${rel.id}">${rel.title}</div>
+        `).join('');
+
+        const container = document.getElementById('articleContainer');
+        container.innerHTML = `
+            <div class="article-page">
+                <a class="back-home">← 返回首页</a>
+                <h1>${article.title}</h1>
+                <div class="article-meta">📖 青医传语 · 双语阅读</div>
+                <div class="article-content">
+                    <div class="zh-section">${article.contentZh}</div>
+                    <div class="en-section">${article.contentEn}</div>
+                </div>
+                ${relatedHtml ? `<div class="related-articles"><h4>📚 相关阅读</h4><div class="related-list">${relatedHtml}</div></div>` : ''}
+            </div>
+        `;
+
+        // 绑定返回按钮
+        document.querySelector('.back-home').addEventListener('click', () => {
+            showHome();
+        });
+
+        // 绑定相关文章点击
+        document.querySelectorAll('.related-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const id = item.dataset.id;
+                if (id) showArticle(id);
+            });
+        });
+
+        // 切换视图
+        document.getElementById('homeView').classList.remove('active');
+        document.getElementById('articleView').classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
+    function showHome() {
+        document.getElementById('articleView').classList.remove('active');
+        document.getElementById('homeView').classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
+    // 导航点击（滚动到对应模块）
+    function setupNavigation() {
+        document.querySelectorAll('[data-nav]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.dataset.nav === 'home') {
+                    showHome();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    showHome();
+                    setTimeout(() => {
+                        const target = document.getElementById(link.dataset.nav);
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            });
+        });
+    }
+
+    // 初始化
+    renderCards();
+    setupNavigation();
+</script>
 </body>
 </html>
